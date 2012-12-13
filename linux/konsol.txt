@@ -1,0 +1,286 @@
+> /bin/setterm -blank 15
+ekran koruyucusunun suresini 15 dk ya ayarlamak icin
+
+> lspci | grep VGA
+ekran kartı bilgileri alır.
+lspci da tek basına alır
+
+> glxinfo | grep render
+ekran karti zimbirtsi
+
+> /usr/lib/nux/unity_support_test -p
+ekran kartı testi
+
+> ls –l | grep "ˆd"
+ls ile sadece dizinleri listelemek
+
+>$ ls –la |grep "ˆd" | wc –l
+bulunduğumuz dizinde kac tane alt dizin oldugunu gormek icin
+
+> cat /etc/fstab
+birşeyler görürsün işte dene bak :)
+
+> du -sh ../ebru
+ne kadar oldgunu gostrir boyutun
+
+> uname -r
+cekirdek surumunu verir
+3.2.0-23-generic-pae
+ilki sürüm ikincisi çiftse kararlı sürüm
+uname -> işletim sistemi hakkında bilgi verir
+
+uname -a -> işl. sistemi hakkında tüm bilgiyi verir
+
+whoami -> hangi kullanıcı oldugunu verir
+
+date -> tarihi verir
+
+who -> sisteme giris yapan acık olan kullanıcıları gosterir
+
+echo $SHELL -> hanig kabugun kullanıldıgı hakkında bilgi verir
+
+id -> kullanıcının uye oldugu grupları verir
+
+ls -la	 -> gizli dosyaları gosterir
+
+touch -> dosya olusturur
+
+cd / -> kök dizine gider
+
+help , man cat, info cat -> daha detaylı
+
+echo $PATH -> bash de kullanılabilecek komutların yolunu gosterir
+
+| pipe kendiden onceki komutun grdisini kendnden sonraki komuta aktarır
+
+history !37 -> 37 den sonraki komutları gosterir
+
+history 10 -> son 10 komutu gosterir
+
+cp dosya dizin/ -> dosyayi dizine kopyaladi
+
+cp -r dizin /home/mert/deneme  > dizinleri kopyaladı
+
+mv dosya klasor1 > tasima komutu
+
+
+chmod melih melih.txt  > dosyanin sahipligini melih kullanıcısına vermis olduk
+
+chmod +w  > yazma haklarını vermis olduk
+
+chmod -w > yazma izinlerini almis olduk
+
+chmod go -x melih.txt  > grup && other demek
+
+arch = uname -m ile aynidir
+
+cat deneme.py
+
+cat deneme > denemeKopya   ->  bi dosyanini icerigini diger dosyaya yazar
+
+df  > disk kullanımı hakkında bilgi verir
+
+history | more  >  daha mantıklı bi seklde cıktı verir
+
+ps -ax | more   > sistemin acilisindan beri tüm sürecler
+
+cat /proc/version   > linux cekirdegi hakkında blgi verir
+
+apt-cache search    > paket aramasi
+
+apt-get update   > en son paket bilgileri
+
+apt-get upgrade  -> guncelleme
+
+
+Dosya sıkıstırma
+
+gzip -9 dosya.txt   >  dosya.txt olusur aslı kalkar 
+
+
+bzip2 dosya  > dosya.bz2 olusur
+
+
+bunzip2 dosya.bz2  > dosya olarak acar 
+
+gunzip dosya.gz  > buda acıyo :)
+
+
+zip -r deneme.zip dosya_veya_dizin   >   deneme.zip adinda dosya_veya_dizin i sıkıstırır
+
+
+tar cvzf deneme.tar.gz dosya_veya_dizin   deneme.gz.zip adinda dosya_veya_dizin i sıkıstırır
+
+
+tar cvjf deneme.tar.bz2 dosya_veya_dizin   > sıkıstırma 
+
+rar ile sifreleyerek sıkstırma 
+
+rar a -ap -p deneme.rar dizin  // iki kere parola sorar
+
+unzip deneme.zip  >  zip dosya acma
+
+sifreli zip dosya acma 
+
+unzip -p sifre deneme.zip
+
+>    tar dosya acma
+
+tar xvzf deneme.tar.gz  
+
+>  baska bir yere acma
+
+tar xvzf deneme.tar.gz -c/acmak_istedgin_dizin/
+
+> tar.z acmak
+
+tar xvZf deneme.tar.Z 
+
+> rar ı acmak 
+
+unrar e deneme.rar 
+
+parolalı
+
+unrar e -pPAROLA deneme.rar
+
+
+> birden fazla acmak
+
+for i in *.zip; do unzip "$i"; done
+
+"" eger bosluk varsa koyulur
+
+> hostname   
+
+makine adi
+
+> last 
+
+sistem gecmisinde kullanıcılar
+
+> uptime 
+
+makina ne zamandir //bide cıktıyı anlasam :/
+
+
+> top
+
+> du -sk[dizin]  
+
+dizin boyutu belrtr kB cinsden
+
+
+> cat /proc/version  
+cekrdek surumu
+
+> cat /proc/filesystem 
+
+cekirdekte kullanılabilecek dosy. sistl listesi
+
+>Ev dizininde bir dosyanızı bulamıyorsanız find komutunu kullanın
+ Örneğin find /home/kullanici_adi |grep anahtar_kelime komutunu kullanabilirsiniz.
+
+> grep -i 'word' /etc/passwd 
+
+-i buyuk kucuk harf ayırımı yapmaz
+
+> grep -v 'word' file.txt
+
+Bu komut file.txt dosyasında şablona uymayanları listeler
+
+>  grep -c 'word' file.txt
+Bu komut file.txt sayfasında şablona uyan satırların sayısını gösterir
+
+> grep -w word
+-l : Şablona uygun bulunan sonuçların dosya isimlerini gösterir.
+
+1
+$grep -l 'word' *.php
+mevcut klasörde php dosyalarının içerisinde word kelimesini arar ve sonuç olarak sadece dosya isimlerini gösterir.
+
+-r : recursive yani alt klasörlerde de arar.
+
+1
+$grep -r'word' /etc/
+etc klasörünün altındaki alt klasörlerde de arama yapar.
+
+-n : Satır satısını gösterir.
+-c : (Count) : Kaç tane sonuç bulunduğunu listeler.
+–color : Sonuçları renklendirir.
+
+Grep Düzenli İfadeler
+^word sadece word ile başlayan kelimeler
+word$ word ile biten kelimeler.
+^[a-z] ilk karakteri a ile z arasında olanlar.
+[a-z]$ son karakteri a ile z arasında olanları[a-z]bla a veya ile ze arasında başlayıp bla ile devam edenler.
+
+
+> grep apache cikti.log   
+
+cikti.log da apache kelimesini bulur
+
+> wc ornek.txt
+
+ornek.txt kac satir harf kelime den olustugunu soyler
+
+> rm -rf -i dizin
+
+siliyim mi diye sorar
+
+>	Ctrl+C -> islemi durdur
+	Ctrl+D -> komut satirina gec ama islem arka planda devam etsin
+	cp -a -> dosyayi kendi sahiplikleri ile kopyala.
+
+
+>	Ctrl+R -> kullanilan gecmis komutlar icerisinde arama yapar.
+
+
+> cat /proc/cpuinfo 
+  diyerekten işlemcinin sülaseini gorebiliriz :)
+  
+> find baslama_dizini -name "dosyadi" -print
+buluyo istee :)
+
+> find baslama_dizini -type f -printf "%p " | xargs egrep -i "aranankelime" | less
+aranankelime yi buluyi
+
+> reset 
+konsol sacmaladıgında
+
+> cd -
+bir onceki dizine donus
+
+> file dosya
+dosyanın turunu ogrenmek icin
+
+> du -s dizinadi 
+bir dizinin ne kadar  yer kapladıgını olcmek icin
+
+> fdisk -l
+
+> df -k 
+sabit disklerde ne kadar yer kapladıgını gormek icin 
+
+> free 
+ne kadar bellek kullanıldıgı ogrenmek icin
+
+> lilo istedigin zaman linux istedgn zaman windows secmeni saglayan program otomatik olarak kurulur gelir
+
+> /etc/issue.net 
+den login ekranı mesajı degstrilyomus
+
+> linux single
+boot ekranına gecip lilo boot kısmından bu komutu yazarsak single olarak gris ypmıs oluruz root yetkilerine sahp oluruz
+
+> netstat -l 
+acık olan portları gosterir
+> netstat -a -n 
+ip leride beraberinde gosterir
+
+> iwconfig 
+komutunda 
+wlan0 cıktısı yanında ESSID falan fıstık yazar 
+lo        no wireless extensions.
+eth0      no wireless extensions.
+gibi seylerin yazmasıda mumkundur

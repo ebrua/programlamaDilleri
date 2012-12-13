@@ -1,0 +1,58 @@
+> ctrl+e 
+sayfayı yukarı dogru kaydırır
+
+>ctrl+y 
+sayfayı asagı dogru kaydırır
+
+> x 
+backspace gibi
+
+> X
+delete tusu gibi
+
+> % 
+imleç üzerindeyken karsılıklı  parantezleri bulur
+
+> u 
+geri alır
+
+> ctrl+r
+geri alma islemini geri alır
+
+> c 
+cut
+
+>p 
+paste 
+
+> y 
+yank
+
+kopyalar
+
+> n
+next
+
+>N
+prev
+
+> /kelime
+basa dogru arama icin
+
+> ?kelime
+sona dogru arama icin
+
+> :set nu
+numaraları ayarlar
+
+> q:
+kullanılmıs komutların listesini verir
+
+> !komut_adi
+girilen komutu kabukta calıstrır.
+
+> 
+
+
+
+
