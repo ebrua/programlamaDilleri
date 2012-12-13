@@ -1,0 +1,167 @@
+BASH => bourne again shell. Bourne shell tabanlı. 
+BSH => bsh komutları genellikle bash e sembolik linktir. 
+TCSH => c tabanlı bir shell. biraz daha farklı. bashteki gibi aynı yolla cevre değişkeni atayamazsın. 
+ksh => korn shell. 
+> cd ~ --> home dizini
+> time pwd --> pek anlamadım. bi time var ama
+> .bash_history --> her kullanıcının home dizininde hangi komutları verdigi listeler. root da root ken. ebru da ebruyken.
+> üst ok --> ctrl+P, alt ok --> ctrl+N
+> ctrl+r ile ararken cıkmak icin ctrl+g ye basılır.
+> ctrl+A en basa cursori
+> ctrl+E en sona cursori
+> ctrl+b left cursori
+> ctrl+f right cursori
+> ctrl+K backspace gibi bulundugu yere kadar.
+> ctrl+d delete gibi
+> ctrl+t transpoze cursuri uzerndeki ve bi onceki arasında he basısta bi adım sağa oteler. 
+> press esc then U uppercase and end of the word
+> press esc then L lowercase and end of the word
+> press esc then C uppercase uzerindeki harfi end of the word
+> export $deneme = "test"
+  echo $deneme
+  test
+  unset deneme
+  --> deneme değişkeninin içi artık boş.
+> ">" işareti yoksa oluşturur. varsa üzerine yazar. 
+> ">>" üzerine ekler.
+> "&>" standart çıktı ve standart hata içeren çıktı içerir. eğer oluşturulmuşsa üzerine yazar.
+> tee --> hem içine yazar hem görüntüler. üzerine yazar.
+  eğer eklemesini istiyorsak tee -a şeklinde kullanmalıyız. 
+> find ./ -name "dene*"
+  bu dizindeki dene ile başlayanların hepsini bulur.
+> xargs aynı komutu aynı cıktı için defalarca çalıştırır.
+find ./ -name "dene*" | xargs rm 
+gibi :)
+> eğer rm ile bir komutun çıktısını çalıştırmak istiyorsak `...` ifadesini kullanmalıyız.
+> cat deneme deneme2 deneme3
+1
+2
+3
+yazar. 
+* cat deneme deneme2 > deneme3
+deneme3 üzerine yazar.
+* cat -E deneme3 
+dersen her satirin sonunu dolar işaretiyle görürsün.
+* cat -n deneme3 
+numberlanmis sekilde gorursun.
+* cat -b deneme3 
+sadece text içeren satırlara numara koyar. -n text içermese de number koyar.
+* cat -s deneme3
+eğer birden fazla boşluk varsa onları sıkıstırır. squeeze.
+* cat -T deneme3
+bazı karakterleri farklı gösterir. mesela tab ı ^I gibi.
+> tac deneme3 
+tersten sıralar. 
+> grep
+[] -> b[alikmnbcv]h ise --> bah,blh,bih, gibi
+a[2-4]z a2z,a3z,a4z gibi
+a.z --> abz,acz,afz gibi
+^ satir basi, $ satir sonu
+| car|truck --> or anlamına gelir.
+> grep -c harfler dosya #harfler kelimesi kaç kez geçiyo diye
+3
+> grep -cr harf * ya da rgerp -c harf *
+> sed 's/2008/2009/' cal-2008.txt > cal-2009.txt 
+
+> Yellow Dog is a PowerPC (it runs on Apple PowerPC-based
+Macs and some non-Apple systems)
+
+> Rpm paketlerini rpm aracı olmadan çıkartmanın yolu cpio yu kullanmak
+rpm2cpio samba-server-3.0.25b-4.5mdv2008.0.src.rpm | cpio -i --make-directories
+
+> yum install paket_ismi
+> yum update (alayını)
+> yum check-update(guncellenecek bir şey var mı diye)
+> remove and erase (bağımlılıklarıyla birlikte siler.)
+> list -> listeler
+> provides or whatprovides 
+paket hakkında fazlasıyla bilgi
+> search
+> info 
+> resolvedep
+bağımlılıkları belirtir.
+> yumdownloader 
+sanırım kurulum yapmadan idiriyo 
+> /etc/yum.repos.d/
+yum conf dosyası
+> dpkg -i
+install
+> dpkg --configure 
+> dpkg -r 
+yapılandırma dosyaları olmadan kaldırır sanırım
+> dpkg -P 
+yapılandırma dosyaları ile brlkte sanırım
+> -I 
+yuklenmemiş dosyalar hakkında bilgi
+> -p or --print-avail Displays information about an installed package
+> dpkg -p
+paket hakkında ayrıntılı bilgi
+>  apt-cache showpkg samba 
+paket hakkında bilgi
+> apt-cache stats
+> aptcache unmet 
+> apt-cache depends samba
+> apt için
+
+-h  Yardım ekranı.
+-d  Sadece indir , kurulumu yapma
+-f  Bütünlük kontrolü başarısız olsa da devam etmeye çalış
+-s  Hiçbir eylem yapma, sadece olayı simüle et
+-y  Tüm sorulara Evet cevabı verdiğimi farzet
+-u  İşlem sonucunda güncellenecek olan paketleri listele
+> apt-get remove gnome-panel
+> apt-get --purge remove gnome-panel
+> apt-get clean lock dosyaları haricinde /var/cache/apt/archives/ ve /var/cache/apt/archives/partial/
+ dizinlerindeki tüm dosyları siler.
+
+> dselect apt ile kullanılan tavsiye edlen sayfalarında kurulmasını sağlayan araçtır.
+> netselect diye bir zımbırtı var. Bu yansılardan ne kadar daha hızlı download edebilirizi gösterir
+netselect ftp.debian.org http.us.debian.org ftp.at.debian.org download.unesp.br ftp.debian.org.br
+       365 ftp.debian.org.br
+pingini bilmem nesini
+
+$ apt-show-versions -u    
+guncellenecek paketlerin sürümü
+
+$ apt-cache show stella  
+paket hakkında ayrıntılı bilgi
+
+$ apt-cache showpkg penguin-command
+genel bilgi almak için
+
+$ apt-cache depends penguin-command
+paketin bağımlı olduğu paketleri almak için
+
+$ dpkg -l | grep mozilla
+sisteme kurulu bir paketin tam adını görüntüleme
+
+$ apt-file search dosya_adı
+bir dosyanın ait olduğu paketi bulma
+
+$ apt-file list paket_adı
+bir paketi içerdiği dosyaların adı
+
+$ apt-file update
+dosya isimlerinin tutulduğu db yi güncelleme
+
+$ apt-get source paket_adı
+kaynak paketi derleme
+
+$ apt-get -b source paket_adı
+kaynak paket indirildikten sonra .deb dosyasının oluşturulmasını istiyorsak 
+yukaridaki komut
+
+$ apt-get build-dep gmc
+derlemek istediğin kaynak kodun bağımlılıklarının bir çoğunu yükler
+
+$ apt-cache showsrc paket_adı
+bir kaynak kodu derlemek için gerekli olan bağımlılıkların listesi
+
+$
+apt-get -f install
+dpkg --configure -a
+
+$ dpkg-reconfigure samba
+reconfigure etmek
+
+
