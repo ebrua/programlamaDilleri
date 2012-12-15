@@ -1,9 +1,9 @@
 BASH => bourne again shell. Bourne shell tabanlı. 
-BSH => bsh komutları genellikle bash e sembolik linktir. 
+BSH => bsh komutları genellikle bashe sembolik linktir. 
 TCSH => c tabanlı bir shell. biraz daha farklı. bashteki gibi aynı yolla cevre değişkeni atayamazsın. 
 ksh => korn shell. 
 > cd ~ --> home dizini
-> time pwd --> pek anlamadım. bi time var ama
+> time pwd 
 > .bash_history --> her kullanıcının home dizininde hangi komutları verdigi listeler. root da root ken. ebru da ebruyken.
 > üst ok --> ctrl+P, alt ok --> ctrl+N
 > ctrl+r ile ararken cıkmak icin ctrl+g ye basılır.
@@ -13,10 +13,10 @@ ksh => korn shell.
 > ctrl+f sag imlec
 > ctrl+K backspace gibi bulundugu yere kadar.
 > ctrl+d delete gibi
-> ctrl+t transpoze imleci uzerindeki ve bir onceki arasında her basista bi adım sağa oteler. 
-> press esc then U uppercase and end of the word
-> press esc then L lowercase and end of the word
-> press esc then C uppercase uzerindeki harfi end of the word
+> ctrl+t transpoze imleci uzerindeki ve bir onceki arasında her basista bir adım sağa oteler. 
+> U ya basarsan kelimeyi buyutur
+> L kucultur.
+>  C uzerinde bulundugu harfi buyutur.
 > export $deneme = "test"
   echo $deneme
   test
@@ -31,13 +31,7 @@ ksh => korn shell.
   bu dizindeki dene ile başlayanların hepsini bulur.
 > xargs aynı komutu aynı cıktı için defalarca çalıştırır.
 find ./ -name "dene*" | xargs rm 
-gibi :)
 > eğer rm ile bir komutun çıktısını çalıştırmak istiyorsak `...` ifadesini kullanmalıyız.
-> cat deneme deneme2 deneme3
-1
-2
-3
-yazar. 
 * cat deneme deneme2 > deneme3
 deneme3 üzerine yazar.
 * cat -E deneme3 
@@ -74,7 +68,7 @@ rpm2cpio samba-server-3.0.25b-4.5mdv2008.0.src.rpm | cpio -i --make-directories
 > yum check-update(guncellenecek bir şey var mı diye)
 > remove and erase (bağımlılıklarıyla birlikte siler.)
 > list -> listeler
-> provides or whatprovides 
+> provides ya da  whatprovides 
 paket hakkında fazlasıyla bilgi
 > search
 > info 
@@ -90,7 +84,7 @@ install
 > dpkg -r 
 yapılandırma dosyaları olmadan kaldırır sanırım
 > dpkg -P 
-yapılandırma dosyaları ile brlkte sanırım
+yapılandırma dosyaları ile birlikte sanırım
 > -I 
 yuklenmemiş dosyalar hakkında bilgi
 > -p or --print-avail Displays information about an installed package
