@@ -18,10 +18,10 @@ ls ile sadece dizinleri listelemek
 bulunduğumuz dizinde kac tane alt dizin oldugunu gormek icin
 
 > cat /etc/fstab
-birşeyler görürsün işte dene bak :)
+
 
 > du -sh ../ebru
-ne kadar oldgunu gostrir boyutun
+ne kadar oldgunu gosterir boyutun
 
 > uname -r
 cekirdek surumunu verir
@@ -268,10 +268,10 @@ ne kadar bellek kullanıldıgı ogrenmek icin
 > lilo istedigin zaman linux istedgn zaman windows secmeni saglayan program otomatik olarak kurulur gelir
 
 > /etc/issue.net 
-den login ekranı mesajı degstrilyomus
+den login ekranı mesajı degstrilyormus
 
 > linux single
-boot ekranına gecip lilo boot kısmından bu komutu yazarsak single olarak gris ypmıs oluruz root yetkilerine sahp oluruz
+boot ekranına gecip lilo boot kısmından bu komutu yazarsak single olarak giris ypmıs oluruz root yetkilerine sahip oluruz
 
 > netstat -l 
 acık olan portları gosterir
