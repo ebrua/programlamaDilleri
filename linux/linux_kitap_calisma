@@ -7,13 +7,13 @@ ksh => korn shell.
 > .bash_history --> her kullanıcının home dizininde hangi komutları verdigi listeler. root da root ken. ebru da ebruyken.
 > üst ok --> ctrl+P, alt ok --> ctrl+N
 > ctrl+r ile ararken cıkmak icin ctrl+g ye basılır.
-> ctrl+A en basa cursori
-> ctrl+E en sona cursori
-> ctrl+b left cursori
-> ctrl+f right cursori
+> ctrl+A en basa imlec
+> ctrl+E en sona imlec
+> ctrl+b sol imlec
+> ctrl+f sag imlec
 > ctrl+K backspace gibi bulundugu yere kadar.
 > ctrl+d delete gibi
-> ctrl+t transpoze cursuri uzerndeki ve bi onceki arasında he basısta bi adım sağa oteler. 
+> ctrl+t transpoze imleci uzerindeki ve bir onceki arasında her basista bi adım sağa oteler. 
 > press esc then U uppercase and end of the word
 > press esc then L lowercase and end of the word
 > press esc then C uppercase uzerindeki harfi end of the word
@@ -164,4 +164,7 @@ dpkg --configure -a
 $ dpkg-reconfigure samba
 reconfigure etmek
 
-
+> dmesg
+açılış sırasında meydana gelen problemleri yakalamayı sağlar
+> CUPS
+ "The Common Unix Printing System" (CUPS) yani Genel Unix Yazdırma Sistemi'dir 
