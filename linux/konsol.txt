@@ -3,10 +3,9 @@ ekran koruyucusunun suresini 15 dk ya ayarlamak icin
 
 > lspci | grep VGA
 ekran kartı bilgileri alır.
-lspci da tek basına alır
 
 > glxinfo | grep render
-ekran karti zimbirtsi
+ekran karti 
 
 > /usr/lib/nux/unity_support_test -p
 ekran kartı testi
@@ -18,7 +17,7 @@ ls ile sadece dizinleri listelemek
 bulunduğumuz dizinde kac tane alt dizin oldugunu gormek icin
 
 > cat /etc/fstab
-
+sisteme direkt bağlanması gereken şeyler için uuid lerde tutulur.
 
 > du -sh ../ebru
 ne kadar oldgunu gosterir boyutun
@@ -37,7 +36,7 @@ date -> tarihi verir
 
 who -> sisteme giris yapan acık olan kullanıcıları gosterir
 
-echo $SHELL -> hanig kabugun kullanıldıgı hakkında bilgi verir
+echo $SHELL -> hangi kabugun kullanıldıgı hakkında bilgi verir
 
 id -> kullanıcının uye oldugu grupları verir
 
@@ -62,7 +61,6 @@ cp dosya dizin/ -> dosyayi dizine kopyaladi
 cp -r dizin /home/mert/deneme  > dizinleri kopyaladı
 
 mv dosya klasor1 > tasima komutu
-
 
 chmod melih melih.txt  > dosyanin sahipligini melih kullanıcısına vermis olduk
 
@@ -161,15 +159,13 @@ sistem gecmisinde kullanıcılar
 
 > uptime 
 
-makina ne zamandir //bide cıktıyı anlasam :/
-
+makina ne zamandir
 
 > top
 
 > du -sk[dizin]  
 
 dizin boyutu belrtr kB cinsden
-
 
 > cat /proc/version  
 cekrdek surumu
@@ -215,7 +211,6 @@ word$ word ile biten kelimeler.
 ^[a-z] ilk karakteri a ile z arasında olanlar.
 [a-z]$ son karakteri a ile z arasında olanları[a-z]bla a veya ile ze arasında başlayıp bla ile devam edenler.
 
-
 > grep apache cikti.log   
 
 cikti.log da apache kelimesini bulur
@@ -232,9 +227,7 @@ siliyim mi diye sorar
 	Ctrl+D -> komut satirina gec ama islem arka planda devam etsin
 	cp -a -> dosyayi kendi sahiplikleri ile kopyala.
 
-
 >	Ctrl+R -> kullanilan gecmis komutlar icerisinde arama yapar.
-
 
 > cat /proc/cpuinfo 
   diyerekten işlemcinin sülaseini gorebiliriz :)
@@ -243,7 +236,7 @@ siliyim mi diye sorar
 buluyo istee :)
 
 > find baslama_dizini -type f -printf "%p " | xargs egrep -i "aranankelime" | less
-aranankelime yi buluyi
+aranan kelimeyi bulur.
 
 > reset 
 konsol sacmaladıgında
@@ -280,7 +273,4 @@ ip leride beraberinde gosterir
 
 > iwconfig 
 komutunda 
-wlan0 cıktısı yanında ESSID falan fıstık yazar 
-lo        no wireless extensions.
-eth0      no wireless extensions.
-gibi seylerin yazmasıda mumkundur
+wlan0 cıktısı yanında ESSID falan yazar.
