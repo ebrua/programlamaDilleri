@@ -1,4 +1,4 @@
-BASH => bourne again shell. Bourne shell tabanlı. 
+BASH => bourne again shell. Bourne shell tabanlıdır.
 BSH => bsh komutları genellikle bashe sembolik linktir. 
 TCSH => c tabanlı bir shell. biraz daha farklı. bashteki gibi aynı yolla cevre değişkeni atayamazsın. 
 ksh => korn shell. 
