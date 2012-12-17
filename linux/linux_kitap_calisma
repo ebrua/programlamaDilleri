@@ -162,3 +162,39 @@ reconfigure etmek
 açılış sırasında meydana gelen problemleri yakalamayı sağlar
 > CUPS
  "The Common Unix Printing System" (CUPS) yani Genel Unix Yazdırma Sistemi'dir 
+$printenv
+çevresel değişkenleri yazar.
+$TERM
+üzerinde çalışılan terminal çeşidini gösterir.
+> Unix Posix standartlarına göre yazılmıştır.
+Portable Operating System for Unix
+> Modül= Çekirdek derleme sırasında eklenmemiş olan programlardır. Kullanıcı bunları istediği zaman derleyip sisteme ekleyip çıkartabilir.
+> Runlevel 0 ----- Açık olan sistemi kapatır.
+
+Runlevel 1 -----Kullanıcı gerektirmeden sisteme erişir.
+
+Runlevel 2 ----- Kullanıcı logon gerektirir. Network servisleri çalışmaz.
+
+Runlevel 3 ------Kullanıcı logon gerektirir.CLI (Komut Arayüz) olarak sisteme erişilir.
+
+Runlevel 4 ------Kullanılmamakta dir.
+
+Runlevel 5 ------Kullanıcı logon gerektirir.GUI (Grafik Arayüz) olarak sisteme erişilir.
+
+Runlevel 6 ------Açık olan sistemi yeniden başlatır.
+
+> init 3 
+diyerek runleveli değiştirebiliriz
+> who -r 
+diyerek de runlevele bakabiliriz
+> /etc/modprobe/blacklist.conf
+black list ayarlarının yapıldığı yer.
+
+> sudo vim /etc/dhcp/dhclient.conf
+
+/etc/network/interfaces dosyasında ağ aygıtı (örneğin eth0)'ın hemen altına şu satırlar eklenmeli.
+dns-nameservers 127.0.0.1
+
+ve ağı tekrar başlatın.
+
+/etc/init.d/networking restart
