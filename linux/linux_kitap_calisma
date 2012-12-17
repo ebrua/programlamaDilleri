@@ -191,6 +191,7 @@ diyerek de runlevele bakabiliriz
 black list ayarlarının yapıldığı yer.
 
 > sudo vim /etc/dhcp/dhclient.conf
+prepend domaib servers aaa.bbb.ccc,aaa.bbb.ccc kısmı ekleyin yoksa
 
 /etc/network/interfaces dosyasında ağ aygıtı (örneğin eth0)'ın hemen altına şu satırlar eklenmeli.
 dns-nameservers 127.0.0.1
