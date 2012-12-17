@@ -51,7 +51,12 @@ kullanılmıs komutların listesini verir
 > !komut_adi
 girilen komutu kabukta calıstrır.
 
-> 
+> :x
+değişiklik varsa kaydeder cıkar, yoksa direkt cıkar
+> C
+bulundugu satırı tamamen siler değişiklik yapmak için
+> r
+sadece bir karakteri değiştirir esc modundayken
 
 
 
