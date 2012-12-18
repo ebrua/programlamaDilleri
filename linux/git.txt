@@ -1,0 +1,10 @@
+
+$ git reset --hard commit_id
+istenilen committeki değişikliklere geri dönmek
+
+$ git branch branch_ismi
+$ git checkout branch_ismi
+$ git branch
+
+branch açma ve hangi branchta olduğunu görme
+
