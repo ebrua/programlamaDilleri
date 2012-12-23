@@ -10,3 +10,4 @@ branch açma ve hangi branchta olduğunu görme
 
 forklayıp forkladığın yerdeki depoyuda günceller
 test142 commiti
+master commiti
