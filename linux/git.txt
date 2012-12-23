@@ -7,6 +7,6 @@ $ git checkout branch_ismi
 $ git branch
 branch açma ve hangi branchta olduğunu görme
 
-forklama ve forklanan yerdeki değişikleri sürekli geri alma
+forklama ve forklanan yerdeki değişikleri sürekli geri alma hakkında bilgi eklenmeli
 
 
