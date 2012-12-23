@@ -8,4 +8,4 @@ $ git branch
 branch açma ve hangi branchta olduğunu görme
 
 
-forklayıp forkladığın yerdeki depoyuda günceller
+
