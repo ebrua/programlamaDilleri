@@ -8,5 +8,4 @@ $ git branch
 branch açma ve hangi branchta olduğunu görme
 
 
-
-
+forklama ile ilgili bilgi eklenmeli
