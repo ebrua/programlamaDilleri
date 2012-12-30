@@ -8,7 +8,7 @@ sayfayı asagı dogru kaydırır
 backspace gibi
 
 > X
-delete tusu gibi
+delete tusu gibi (üzerinde bulunduğu harfi siler)
 
 > % 
 imleç üzerindeyken karsılıklı  parantezleri bulur
@@ -57,7 +57,24 @@ değişiklik varsa kaydeder cıkar, yoksa direkt cıkar
 bulundugu satırı tamamen siler değişiklik yapmak için
 > r
 sadece bir karakteri değiştirir esc modundayken
-
+>dd 
+satiri siler
+>ctrl+F
+bir ekran ileri
+>ctrl+B
+bir ekran geri
+>/ 
+varsayılan olarak en bastan en sona kelime arar
+>? 
+en sondaN en basa kelime arar
+> :s/sondan/sondaN
+bul değiştir yapar, ama o sırada imleç değiştireceğin satırın üzerinde olmalı
+>:number
+istediğin satırın başına götürür
+> vim + deneme.txt
+deneme.txt'yi aç ve imleci en son satıra götür
+> vim +12 deneme.txt
+deneme.txt'yi aç ve imleci 12. satıra götür
 
 
 

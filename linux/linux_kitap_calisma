@@ -199,3 +199,16 @@ dns-nameservers 127.0.0.1
 ve ağı tekrar başlatın.
 
 /etc/init.d/networking restart
+> less /proc/cpuinfo
+işlemcinin kaç bit olduğunu öğrenme
+> ebru ALL=(ALL) NOPASSWD: ALL
+sudo ile yetki alırken parola sorulmaması için
+/etc/sudoers
+> ubuntu da oluşturulan ilk kullanıcıya root yetkileri veriliyor.
+kullanıcı parolası ve root parolası aynı oluyor.
+Ayrı bir root parolası yapmak için passwd root yaz.
+Oluşturdugun kullanıcıya root yetkisi verebilmek için 
+adduser kull_adi sudo 
+dersen olur.
+
+

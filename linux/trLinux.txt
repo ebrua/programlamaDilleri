@@ -1,0 +1,11 @@
+>ls -l
+drwxr-xr-x 2 ebru ebru  4096 Feb 9 10:11 ctp208
+dizin icinde 2 dizin oldugunu belirtiyor. Biri alt dizin, biri kendi dizini.
+ebru kullanıcısı sahibi, grubu ebru.
+> rcp
+remote copy
+> sahibinYetkileri ayniGruptakilerin diğerKullanıcılar
+>/etc/bashrc 
+ye alias eklersek tüm kullanıcılar için geçerli olur.
+
+
