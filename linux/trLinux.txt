@@ -7,5 +7,125 @@ remote copy
 > sahibinYetkileri ayniGruptakilerin diğerKullanıcılar
 >/etc/bashrc 
 ye alias eklersek tüm kullanıcılar için geçerli olur.
+>eject
+root olmadan aygıt çözmedir, tek başına kullanılırsa cdyi çözer kapağı açılır.
+>swapon swapoff 
+takas işlemlerini açar kapatır. mount cıktısında swap alanı görülmez, çünkü os tarafından kullanılır, root dahi göremez
+>ps aux
+UID kullanıcı idsi
+PID süreç idsi
+PPIP
+eğer bir süreci baska vir süreç başlattıuysa ana süreç idsi
+TTY
+sürecin hangi terminalden başlatılduğını belirten idsi
+ptsN: (pts1, pts2 gibi) Ağ üzerinden başlanmış
+kullanıcılar tarafından başlatılmış süreçleri gösterir.
+ttyN: (tty1, tty2 gibi) Seri arabirim üzerinden
+(modemle bağlantı gibi) bağlı kullanıcılar tarafından
+başllatılmış süreçleri gösterir.
+STAT
+(Status) Sürecin bulunduğu duruma ilişkin bir kod.
+R (Runnable): Çalışlabilir durumda, sırasını bekliyor.
+S (Sleeping): Uyuyor. Bir şeylerin olmasını bekliyor
+Z (Zombie): Bu süreç ile bağlantılı tüm di¤er süreçler
+bitmiş veya ölmüş; bunun da bitmiş olması gerekirdi
+ama bir nedenle ölememiş. ps listesinde hâlâ görünüyor
+olması zararsızdır.
+TIME
+sürecin ne kadar süredir çalıştığını gösterir
+>cal
+kare seklinde tarihi goruntuler güzel bir komut
+parametreleri [yıl] [ay] 
+şeklinde olabilir
+>sleep n
+n saniye kadar bekler. Shell programing de işe yarayabilir kullanması.
+>watch [–n saniye] komut
+ctrl+c ile kesinceye kadar çalışır
+> more
+da / ile vi deki gibi arama yapabiliriz.
+>top 
+komutunda q-> çıkış, M-> bellek kullanımı, P-> işlemci kullanımına göre listelemek içindir
+>zip
+MSDos Serisi için os lar
+>gzip 
+GNU lisanslı
+>bzip 
+daha büyük dosyaları sıkıştırmak için
+>/boot
+açılışla ilgili bilgiler ve linux çekirdeği burada saklanır
+>/dev
+buradaki her şey bir nodedur
+>/etc
+servis dosyalarının nerdeyse hepsi burada
+>/mnt
+linux çekirdeğinin otomatik olarak sanırım bağladığı dosyalar burada
+>/proc
+belleğin bir bölümü bu dizin için disk gibi kullanılmaktadır
+>/sbin
+sistem yönetimiyle ilgili program komutları var
+>/usr
+yazılımla ilgili kütüphaneler burada saklanır
+>/usr/local
+sistemde tüm kullanıcılara yönelik uygulama yazılımlarının yüklendiği dizindir
+bir program yükleyeceğiniz zaman programı /usr/local/bin altına yüklemek kitaplıkları da /usr/lib altına koymak
+/var/www
+web ile ilgili 
+>/dev/floppy
+disket sürücü
+>/dev/hda
+ide diskin birinci ana bölümü
+/dev/hda1
+ana bölümün 1. bölümü
+>/etc/rc.local
+sistem her açıldığında yapılacak işler 
+örneğin eğer sistem açıldığında /tmp altındakiler silinsin istiyorsak
+bin/rm -r /tmp/* 
+diyebiliriz
+>bir değişkeni eklediğimiz zaman hep geçerli olması için exporttan sonra .bashrc ye atmalıyız.
+Tüm kullanıcılar için geçerli olsun istiyorsak /etc/bashrc'ye atmalıyız
+>bg
+arka planda çalıştırır
+>ctrl+z 
+ile kesersek pause tusu gibi iş yapar
+>jobs
+arka plana atılmıi işlerin listesi
+>cp -p
+kopyalama işlemleri sonucunda kopyaların orjinalleri gene aynı kullanıcıya ait 
+>find . -name dosya
+>find . -size -3c
+3 karakterden (byte) az olan
+>find . -size +100k
+100 kb dan buyuk olan dosyalar
+-ctime 8 
+8 gün once değişikliğe uğramış olanlar
+-ctime +8
+8 günden daha uzun bir süre önce değişikliğe uğramış olanlar
+-type f
+dosyalar
+-type d
+dizinler
+-atime 3
+3 gün once değişikliğe uğramış olanlar
+-mmin 3
+3 dk once değişikliğe uğramış olanlar
+-ctime dosyanın sahibi değişmişsede değişmiş olarak algılar 
+ama -mtime sahibi değişimiş ise değişmiş olarak algılamaz
+>find /home -type d -name [tmp, temp]
+ismi tmp ya da temp olanları bulur
+-a -> ve 
+-o -> veya
+\! -> değil
+>grep -ni murat dosya
+i->ignore
+n->satır no
+>grep -c kelime text
+kac defa kelimenin geçtiği öğrenilir
+-v-> olmayanları gösterir
+>zgrep 
+sıkıştırılmış dosyalar içinde arama yapar
+>tar -cvf d.tar d1 d2 d3 d4 d5
+d1..d5 i d.tar altında toplar
+>tar -cvf
+yerine tar cvf demekte yeterli olurmuş
 
 
