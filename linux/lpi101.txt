@@ -1,0 +1,16 @@
+> ldd /usr/bin/ruby
+rubynin bağlı oldugu kitaplıklar
+>
+Ide Hdd = Paralel iletişim yapar. (PATA)
+SATA HDD = Seri iletişim yapar.
+>IDE (Integrated Drive Electronics) ve SCSI (Small Computer Systems Interface) 
+> Basic diskler dynamic diskler
+> Partition kavramları:
+Primary Partition
+İşletim sistemlerinin kurulu olduğu alanlardır. Biri boot için aktif olmalıdır.
+Extended Partition
+aktif primaryler çıkardıktan sonra geriye kalan alanlardır.
+Logical Partition
+Extended bölümlerdeki alanlardır. Sayıları sınırsız olabilir.
+> edquato
+>e2fsck

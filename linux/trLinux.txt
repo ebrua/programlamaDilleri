@@ -90,6 +90,7 @@ ile kesersek pause tusu gibi iş yapar
 >jobs
 arka plana atılmıi işlerin listesi
 >cp -p
+örneğin root ken bir şeyi kopyaladığımızda baska bir kullanıcınınsa dosya root haklarıyla değilde dosyanın sahibi haklarıyla kopyalasın diye
 kopyalama işlemleri sonucunda kopyaların orjinalleri gene aynı kullanıcıya ait 
 >find . -name dosya
 >find . -size -3c
@@ -127,5 +128,26 @@ sıkıştırılmış dosyalar içinde arama yapar
 d1..d5 i d.tar altında toplar
 >tar -cvf
 yerine tar cvf demekte yeterli olurmuş
-
-
+> tar -f parametresi arşivleme için kullanılır
+> tar ile bir şeyi root iken bile çözsen orjinal kullanııc haklarıyla çözülür
+>tarla "*" diyip her şeyi tarlarken dışarıda bırakmak istedeğimiz dosyaları -exclude parametresiyle dışarıda bırakbiliriz
+>tar bir dosyayı açtığında bulundugu yerde aynı isimli dosyaların uzerine yazar, yazmaması için 
+-k parametresi verilmeli
+>tar bulundugu yerdeki linkleri arsivlemeye almaz alınmasını istiyorsak
+ -h parametresini vermeliyizi
+>rsh
+remote shell
+rsh
+192.168.1.2 (cd /yedek; tar -x)
+.rhosts dosyasına ip'ni yazarsan o pcye ait kullanıcılar diğer pcye uzaktan erişim yapabilir anlamına gelir
+>xargs
+komutu arka arkaya komutları calıstırı aslında * falan gibi ifadelerde bircok is yapılabilir ama o zaman tek bir komut için ayrılmış tampon dolar
+cok uzun olursa
+> at 
+su zamanda su komutu yap
+>atq
+at ile kuyruga verilmis isler listesi
+>at -c 1
+işin ayrıntısını gormek için
+>atrm
+at yi  iptal etmek için

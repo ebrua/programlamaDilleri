@@ -1,0 +1,8 @@
+>how to create po file
+sudo gem install gettext
+include GetText
+require 'rubygems'
+$ rgettext editor.rb po/en/editor.po
+$ rmsgfmt editor.po -o locale/en/LC_MESSAGES/editor.mo
+
+
