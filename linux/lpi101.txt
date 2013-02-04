@@ -14,3 +14,168 @@ Logical Partition
 Extended bölümlerdeki alanlardır. Sayıları sınırsız olabilir.
 > edquato
 >e2fsck
+> du
+-X dizinleri ölçmez
+> cat /etc/fstab
+sisteme direkt bağlanılması gereken şeyler için
+>echo $SHELL
+hangi kabuk
+>id 
+kullanıcının üye grupların id'lerini verir.
+>echo $PATH -> bash de kullanılabilecek komutların yolunu gosterir
+>history !37 -> 37 den sonraki komutları gosterir
+>history 10 -> son 10 komutu gosterir
+>cat /proc/version   > linux cekirdegi hakkında blgi verir
+>bzip2 dosya  > dosya.bz2 olusur
+>bunzip2 dosya.bz2  > dosya olarak acar 
+>gunzip dosya.gz
+>tar cvzf deneme.tar.gz dosya_veya_dizin
+>tar cvjf deneme.tar.bz2 dosya_veya_dizin  
+> cat /proc/filesystem 
+cekirdekte kullanılabilecek dosy. sistl listesi
+>grep -w dosya dosya.txt
+sadece kelimeleri
+-n : Satır satısını gösterir.
+-c : (Count) : Kaç tane sonuç bulunduğunu listeler.
+>cp -a -> dosyayi kendi sahiplikleri ile kopyala.
+>cat /proc/cpuinfo 
+>cat /etc/meminfo
+> free 
+ne kadar bellek kullanıldıgı ogrenmek icin
+> df -k 
+> netstat -l 
+acık olan portları gosterir
+> netstat -a -n 
+ip leride beraberinde gosterir
+> > ">" işareti yoksa oluşturur. varsa üzerine yazar. 
+> ">>" üzerine ekler.
+> "&>" standart çıktı ve standart hata içeren çıktı içerir. eğer oluşturulmuşsa üzerine yazar.
+> &>> oluncada üzerine yazar
+> tee --> hem içine yazar hem görüntüler. üzerine yazar.
+  eğer eklemesini istiyorsak tee -a şeklinde kullanmalıyız. 
+> xargs aynı komutu aynı cıktı için defalarca çalıştırır.
+find ./ -name "dene*" | xargs rm 
+> Rpm paketlerini rpm aracı olmadan çıkartmanın yolu cpio yu kullanmak
+rpm2cpio samba-server-3.0.25b-4.5mdv2008.0.src.rpm | cpio -i --make-directories
+
+> yum install paket_ismi
+> yum update (alayını)
+> yum check-update(guncellenecek bir şey var mı diye)
+> remove and erase (bağımlılıklarıyla birlikte siler.)
+> list -> listeler
+> provides ya da  whatprovides 
+paket hakkında fazlasıyla bilgi
+> search
+> info 
+> resolvedep
+bağımlılıkları belirtir.
+> yumdownloader 
+sanırım kurulum yapmadan idiriyo 
+> /etc/yum.repos.d/
+yum conf dosyası
+> dpkg -i
+install
+> dpkg --configure 
+> dpkg -r 
+yapılandırma dosyaları olmadan kaldırır sanırım
+> dpkg -P 
+yapılandırma dosyaları ile birlikte sanırım
+> -I 
+yuklenmemiş dosyalar hakkında bilgi
+> -p or --print-avail Displays information about an installed package
+> dpkg -p
+paket hakkında ayrıntılı bilgi
+>  apt-cache showpkg samba 
+paket hakkında bilgi
+> apt-cache stats
+> aptcache unmet 
+> apt-cache depends samba,
+
+$ apt-cache show stella  
+paket hakkında ayrıntılı bilgi
+
+$ apt-cache showpkg penguin-command
+genel bilgi almak için
+
+$ apt-cache depends penguin-command
+paketin bağımlı olduğu paketleri almak için
+
+$ dpkg -l | grep mozilla
+sisteme kurulu bir paketin tam adını görüntüleme
+
+$ apt-file search dosya_adı
+bir dosyanın ait olduğu paketi bulma
+
+$ apt-file list paket_adı
+bir paketi içerdiği dosyaların adı
+
+$ apt-file update
+dosya isimlerinin tutulduğu db yi güncelleme
+
+$ apt-get source paket_adı
+kaynak paketi derleme
+
+$ apt-get -b source paket_adı
+kaynak paket indirildikten sonra .deb dosyasının oluşturulmasını istiyorsak 
+yukaridaki komut
+
+$ apt-get build-dep gmc
+derlemek istediğin kaynak kodun bağımlılıklarının bir çoğunu yükler
+
+$ apt-cache showsrc paket_adı
+bir kaynak kodu derlemek için gerekli olan bağımlılıkların listesi
+
+$
+apt-get -f install
+dpkg --configure -a
+
+$ dpkg-reconfigure samba
+reconfigure etmek
+
+> dmesg
+açılış sırasında meydana gelen problemleri yakalamayı sağlar
+> CUPS
+ "The Common Unix Printing System" (CUPS) yani Genel Unix Yazdırma Sistemi'dir 
+$printenv
+çevresel değişkenleri yazar.
+$TERM
+üzerinde çalışılan terminal çeşidini gösterir.
+> Runlevel 0 ----- Açık olan sistemi kapatır.
+
+Runlevel 1 -----Kullanıcı gerektirmeden sisteme erişir.
+
+Runlevel 2 ----- Kullanıcı logon gerektirir. Network servisleri çalışmaz.
+
+Runlevel 3 ------Kullanıcı logon gerektirir.CLI (Komut Arayüz) olarak sisteme erişilir.
+
+Runlevel 4 ------Kullanılmamakta dir.
+
+Runlevel 5 ------Kullanıcı logon gerektirir.GUI (Grafik Arayüz) olarak sisteme erişilir.
+
+Runlevel 6 ------Açık olan sistemi yeniden başlatır.
+> /etc/modprobe/blacklist.conf
+black list ayarlarının yapıldığı yer.
+>sudo vim /etc/dhcp/dhclient.conf
+> ebru ALL=(ALL) NOPASSWD: ALL
+sudo ile yetki alırken parola sorulmaması için
+/etc/sudoers
+> ubuntu da oluşturulan ilk kullanıcıya root yetkileri veriliyor.
+kullanıcı parolası ve root parolası aynı oluyor.
+Ayrı bir root parolası yapmak için passwd root yaz.
+Oluşturdugun kullanıcıya root yetkisi verebilmek için 
+adduser kull_adi sudo 
+dersen olur.
+>/etc/init.d/networking restart
+>cal
+kare seklinde tarihi goruntuler güzel bir komut
+>/etc/rc.local
+sistem her açıldığında yapılacak işler 
+örneğin eğer sistem açıldığında /tmp altındakiler silinsin istiyorsak
+bin/rm -r /tmp/*
+>bir değişkeni eklediğimiz zaman hep geçerli olması için exporttan sonra .bashrc ye atmalıyız.
+Tüm kullanıcılar için geçerli olsun istiyorsak /etc/bashrc'ye atmalıyız
+>tar bir dosyayı açtığında bulundugu yerde aynı isimli dosyaların uzerine yazar, yazmaması için 
+-k parametresi verilmeli
+>tar bulundugu yerdeki linkleri arsivlemeye almaz alınmasını istiyorsak
+ -h parametresini vermeliyiz
+
