@@ -1,0 +1,97 @@
+IRQ (Interrupt Lines Request) = CPU ya interrupt gönderildiği numara
+I/O adressed = CPU okuma ve yazma yaparken özel adresler belirtir. Bunlar I/O adresleridir.
+DMA = CPU kullanmadan sisteme erişmeyi yapar.
+>cat /proc/dma
+4 cascade 
+dma listesi
+cat /proc/interrupts
+interrupt listesi
+>cat /proc/ioports
+ioportları listeler
+>lspci -v
+I/O ve IRQ ları listeler
+>lspci -b
+BIOS dan ziyade çekirdek tarafından atananları listeler
+>dmesg
+Kernel mesajlarını gösterir.
+> /etc/modules.conf
+alias eth0 e100
+alias eth1 e100
+options eth0 io=0x300 irq=10
+options eth1 io=0x340 irq=9
+PCI= Sistem içindeki veri akışını sağlayan bir veri yolu. Bu veriyolunu kullanan donanımlar, anakart
+ üzerindeki uygun PCI girişlerine takılmalıdır. Yeni nesil modemler, ses kartları ve TV kartlarının 
+hemen hepsi, bilgisayar bağlantısı için PCI veriyolunu kullanıyorlar.
+>SCSI ler 3 numara ile tekil olarak tanımlanırlar.
+a. the SCSI channel-> Her scsi adaptörü bir veri kanalını destekler. (disk, CDROM gibi)
+b. the device ID number-> Her cihazın bir tekil id'si olur.
+c. the logical unit number LUN->
+> Sistem boot edilmeye scsi id si 0 olandan başlar, ancak istersek bunu değiştirebiliriz.
+> network kartıyla ilgili bilgileri aşağıdaki komutlardan biriyle elde edebiliriz.
+dmesg, lspci, scanpci, /proc/interrupts, /sbin/lsmod.or /etc/modules.conf
+-----------------------------------------------
+PCI = Sistem yoludur. Günümüzde yaygın olarak kullanılır. ISA vardı eskiden ama şimdi pek kullanılmıyor.
+ISA bus daha çok 8 bit 16 bit sistem yuvalarına yönelik, PCI 32 bit destekler.
+>dmesg | grep -i irq
+bu şekilde de irq öğrenilebilir.
+>dmesg | grep -i dma
+>Eskiden port numaraları ve irqlar sabitmiş, bu da cihaz takıp çıkarmayı zorlaştırıyormuş,
+>İlk seri port COM1, 2. si COM2
+>Cihazlar çoğalınca irq ve io port adresleri yetersiz kaldı. PnP geliştirildi bunun için.
+>ISA PNP kullanıcıları irq çatışmalarının olmadığını fark ediyorlardır.
+>Hiç bir cihaz kendi portunu diğerleriyle paylaşmaz.
+>Her ISA pnp yi desteklemez, bu yüzden bazı çatışmalar çıkar, bunlarda isapnptools ile çözülür
+>/etc/isapnp.conf 
+pnp aygıtlarını yapılandırır.
+> pnpdump 
+pnp aygıtlarını ve bunların tercihlerini ortaya koyar.
+> isapnp komutu
+>lspnp 
+pnp aygıtlarını listeler
+> /proc/bus/pnp
+aynı zamanda bilgileri buradan da bulabilirsin
+> /dev/hda
+ilk sürücü ilk ide kontrolcüsü
+  /dev/hdb
+aynı şekilde
+ilk sürücü ikinci ide kontrolcüsü
+  /dev/hdc
+aynı şekilde
+  /dev/hdd
+>setserial 
+seri port bilgilerini set ya da get eder.
+>sudo lspci | grep -i aud
+ses kartı
+>sudo lsmod |egrep '(snd)|(Module)'
+cat /etc/modprobe.conf ile aynı
+> sndcnf
+ile sound ayarları yapılır
+
+> SCSI
+Birden fazla farklı cihazın bilgisayara bağlayabilmek için kullanılan bir standart
+Paralel birim  standartı
+
+> LBA
+Normalde veriler sektörler, trackler tarzında tutulluyor
+ama bu disk büyümesine engel oluyor bu yuzden verileri bloklar halinde
+yerleştiriyoruz
+> hotplug ve udev -> aygıt yönetimi sağlayan yazılımlardır bilgisayarı kapatmaya gerek kalmıyor, usb gibi
+> coldplug da tam tersi
+> module yuklemek için
+*insmod
+*modprobe parametreleri
+   -a, --all, komut satırındaki tüm modulleri yükler
+   -r, kaldırır
+   -l, wildcard tüm eşleşen modul isimlerini yazar
+   -f, force
+   -C, varsayılan ayarların üzerine yazar
+   --show-depends, bağımlılıkları gösterir
+> lspci -k
+  kernel bilgileri module bilgileri ile gösterir
+> lsusb  
+      -t, tree olarak busı gösterir
+       -d, device hakkında bilgi
+     
+> module ve driver arasındaki fark?
+module run time olarak eklenir
+
