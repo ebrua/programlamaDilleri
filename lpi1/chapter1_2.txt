@@ -1,0 +1,117 @@
+> &> hata ve stdo
+> cat -n 
+      -E, her satır sonu $ işareti koyar
+> join 
+  eşleşen satırlardan itibaren gösterir
+  satırlarıda aynı olmalı
+> sort 
+  dosya içindeki satırları sıralar
+  -f, --ignore-case
+  -M, --month-sort
+  -k ?
+
+> split
+dosyayı parçalara ayırır
+-b n
+-b n k
+-b n m
+-b, byte
+> tr BCJ bcj < dosya.txt
+> uniq
+  -d sadece iki kez geçenleri yazar bir kere yazar
+  -D tüm tekrar edenlerin hepsini yazar 3 kerede olsa
+   -i ignore case
+   -u tekil satırları yazar
+   -c arka arkaya kaç tane geldiğini yazar
+> fmt
+yazıyı formatlar
+-w -> sütunlara böler
+> nl
+numalarandırır,
+-b -> body stilini kullanır
+-h -> header stilini kullanır
+:q
+-f -> footer stilini kullanır
+> pr komutu
+> grep 
+  rgrep, ya da grep -E düzenli ifadelere izin verir
+  
+> sed '3d' dosya
+3. satırı siler
+> sed '/555/d' dosya
+ -i dosyaya yazar
+ g birden fazla varsa
+
+>rpm
+-i kurma
+-U kurma ya da sürüm yükseltme
+-F upgrade etme
+-q sorgular, eğer paket yüklenmiş ise içerdiği dosyaları gösterir
+-V yüklendiğinden beri pakette değişiklik olmuş mu diye bakar?
+-e paketi kaldırır
+--rebuild -> binarye çevirir, rpmbuilde taşındı sonradan bu parametre
+--rebuilddb -> RPM veritabanını yeniden inşa eder, hataları düzeltir.
+--root ?
+--forces üzerine yazarak kurar eski dosyaların ama zaten öyle değil mi?
+--nodeps -> kurarken ya da kaldırırken bağımlılıkları göz önünde bulundurmaz
+--test -> diğer paketlerle çatışma durumunu kontrol eder
+--prefix path -> kurulum dizinini ayarlar,
+-a ya da --all -> tüm paketleri doğrular ve sorgular
+-f file ya da --f file -> kendi paketlerini sorgular ve doğrular
+-p package-file ?
+-i ?
+-R ya da --requires -> bağımlılıkları görüntüler
+-l ya da --list -> paketin içerdiği dosyaları gösterir
+
+> rpm2cpio samba-server-3.0.25b-4.5mdv2008.0.src.rpm | cpio -i --make-directories
+
+> yum
+install
+update
+check-update
+upgrade -> geçmiş olan paketleri yükseltir?
+remove ya da erase-> bağımlılıklarıyla kaldırır
+list -> kurulu paket listesi
+provides ya da whatprovies -> paket hakkında bilgi,
+ilişkili paketler gibi
+search -> arama
+info -> rpm -qi komutuyla aynı
+clean -> yum cache dizinini temizler
+shell -> yum shell modu
+resolvedep -> bağımlılıkları gösterir
+localinstall -> istediğin yere kurar
+localupdate ?
+deplist -> bağımlılıklar
+------------------------
+> apropos ve man -k ayn işi yapmakta
+> whatis ls 
+sadece komutun ismine bakar
+> info ls
+> grep "rm \*pyc"
+> egrep, grep -E ile aynı şey
+> egrep "a{1,2}" dosya
+> sed -e "a\yeni" seddosyasi
+> yüklü tüm paketleri görme 
+dpkg -l 
+> guake paketinin yükledğiğ dosyalar
+dpkg -L guake
+> dpkg -S /usr/bin/guake
+> dpkg -p guake
+paketin boyutu falan
+> kaldrırıken etkielecenek paketler
+--no-act bağımllıkları falan kalıdırırken neler olacağınısöylüyor
+> rpm 
+-U 
+> rpm -qi guake 
+paket bilgisi
+> rpm -qpi yuklu_olmayan_paket
+> rpm -qlp guake
+> -f ile bir paketin o dosyaya sahip olup olmadığına bakıyoruz
+
+> rpm2cpio sdsadfsfdsdf.rpm > sfsdf.cpio
+arşivleme şekli ona çevirdik, zaten rpm dosyaları genelde cpio tarzı arşivlenmiş bir şeyler
+> yum  erase guake
+----------------------------------
+
+
+
