@@ -1,0 +1,58 @@
+> Pek çok Linux dağıtımı küçük, büyük harf, numara, noktalama işareti destekler.
+> u45 geçerli, 45u geçerli değil
+> iki tane aynı isimde oluşturabiliyoruz
+> bosluklu kabul etmiyor
+örnek: sudo useradd fatma\ ayse
+> ti-re, ti_re, fatma.23
+> kullanıcı adları 45user olamaz, user45 olabilir
+> kullanıcı ekleyince /etc/group a eklenir
+* GROUPS komutu 
+hangi grupta olduğumuzu gösterir mi grupları listeler mi
+> fedorada sudo diye bir grup yok?
+> newgrp grup_adi 
+o sırada o grubun haklarıyla çalışmamızı sağlar
+> 0 rootun grubu, bin 1, deamon 2, sys 3, adm 4, disk 6
+> 0-99 arasını genelde sistem kullanır
+> istersek uid ve gid kendimiz belirleriz
+> 500 ve 1000 arasında olması normal bir şey
+* USERADD komutu
+> passwd sekizkarakter
+parametreler:
+-d -> ev dizini
+-u -> Kullanıcı kimliğinin sayısal değeridir. Bu değer, -o seçeneği kullanılmadığı sürece, eşsiz olmalıdır.  Değer  mutlaka  pozitif  bir  sayı  olmalıdır.
+Öntanımlı olarak, diğer kullanıcıların numaralarından ve 99´dan büyük, en küçük numara kullanılır. 0 ile 99 arasındaki değerler sistem hesapları için
+ayrılmıştır.
+-M -> kullanıcı ev dizini oluşturmaz
+-D -> Ön tanımlı değerlerin değiştirilmesi
+	-b  kullanıcı adıyla ama başka bir yerde ev dizini oluştursun diye
+	-e  bitiş tarihi Yil, Gün, Ay
+	-f   
+	-g  varsayilan grup 
+	-s  ön tanımlı kabuk
+-m ? anlamadim
+> /etc/login.defs
+* PASSWD komutu
+-l -> hesabı kilitler
+-d -> parolayi siler
+-S -> kullanıcı hakkında bilgi verir
+
+* USERMOD komutu
+-d -> kullanıcının ev dizinini değiştirir
+-e -> kullanıcının hesabının son bitiş tarihini belirtir
+-g -> varsayılan grup
+-l -> kullanıcı adi
+-s -> kabuk
+-u -> uid, 0-99 olamaz
+-L -> kullanıcı parolasını kilitler
+-U -> kilitli parolayı açar
+
+
+
+
+
+
+SORULAR
+> /etc/group ve /etc/group- neden farklı iki dosya
+> /etc/passwd ve /etc/group daki id lere bak
+>  groupadd, group.conf, groupdel, groupmems, groupmod, groups
+
