@@ -1,0 +1,4 @@
+> nagios, ağ sistemlerini denetleme
+	  makine kaynakalrını denetler
+	  otomatik log döndürme
+	  
