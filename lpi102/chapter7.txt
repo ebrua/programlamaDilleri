@@ -46,7 +46,24 @@ ayrılmıştır.
 -L -> kullanıcı parolasını kilitler
 -U -> kilitli parolayı açar
 
-
+* CHAGE komutu
+kullanıcının hesap dolum süresi ile ilgilidir
+-l -> chage -l username
+hesap süresi için bilgi verir
+-m -> kullanıcının minimum sürelerde nasıl parol değiştireceği ile alakalı
+0 olması kullinicinin bir günde istediği kadar parola değiştirmesi
+1 olması kullanıcının bir günde bir kes değiştireceği
+2 olması kullanıcının her 2 günde bir değiştireceği anlamına gelir.
+-M -> maximum zaman aralığında parola değişimi
+mesela 30 parolanın yaklaşık 1 ay sonra değiştirileceği anlamına gelir
+Not: eğer kullanıcı parolasının belirlenen gündeen önce değiştirirse sayaç 
+değiştirdiği günden itibarenresetlenir
+-d -> parolanın son değiştiği günü ayarlar, aslında bunu Linux sistemler otomatik olarak ayarlar
+ama istersek ellede bu şekilde değiştirebiliriz
+-I -> belirli zamanlar arasında parola ve kullanıcının inaktif olmasını sağlar
+-E -> yalandan bir zaman aşım süresi belirmek gibi mi ?
+-W -> hesap zaman aşım süresi için belirlediğimiz tarihte uyarı verir
+ 
 
 
 

@@ -1,4 +1,10 @@
 > nagios, ağ sistemlerini denetleme
 	  makine kaynakalrını denetler
 	  otomatik log döndürme
+
+> NPRE uzaktaki hosttan yereldeki kontrolleri çalıştırmaya izin verir
+>sudo apt-get install nagios-nrpe-server
+sudo apt-get install ssmt
+sudo apt-get install nagios3 nagios-nrpe-plugin
+
 	  
