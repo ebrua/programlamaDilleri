@@ -1,0 +1,228 @@
+> Çoklu kullanıcılı sistemlerde kimin dosyaya erişitiği
+hangi kısıtlamalarla dosyalara eriştiği önemli
+> touch \* \? touch \"
+> ancak / ile yapılamaz çünkü dizin elemanlarını ayırmak için kullanılır?
+> Dosya isimleri uzunluk sıralamaları dosya sistemine bağlıdır,
+255 karakter sınırlaması var.
+Linux'ta kullanılan dosyalama sistemleri ext2, ext3, ext4, reiserfs, xfs
+*) reiserfs eğer küçük dosyalar kullanacaksak etkili,
+*) ext3'e günlükleme eklenmiş sistemde bir problem olduğunda 
+fsck yapma gereksinimini kaldırır
+*) ext3 daha az işlemci kullanıyor
+> nokta ile başlaması gizlilik anlamına geliyor
+> DOS basit bir işletim sistemi, MS-DOS, IBM-DOS, FreeDOS var
+> Dos'ta dosya isimleri en fazla 8 karakter uzantı en fazla 3 karakterdir
+> Linux'ta dosya isimleri buyuku kucuk harf duyarlı
+> wildcardlar
+> touch a1
+ls a? 
+> [a-o]
+> ls a[a-z]*
+aylin ayse ayten
+> LS KOMUTU
+> ls -a, all
+     -A, . .. dizinleri gösterme
+     -F, sembolik linkse @, dizinse /
+     -R --recursive 
+     -p dizinlerin sonuna / ekler
+> groups 
+o kullanıcının ait olduğu gruplar
+> /etc/group 
+tüm gruplar
+> sudo cp a1 dizin
+ ls -ll dizin/
+> CP KOMUTU 
+> linuxta normalde direkt üzerine yazar cp'de zaten 
+> cp -i, interaktif sorar üzerine yazayım mı diye
+     -p --preserve kullanıcının haklarıyla kopyalar
+    *sudo cp -p ayten dosya/
+     -u, eğer kaynaktaki dosya diğer kopyalanacak 
+         yerdeki dosyadan daha yeniyse update eder
+> mv KOMUTU
+> mv -i, interaktif sorar üzerine yazayım mı diye
+     -f 
+     -u 
+> rm KOMUTU
+     -r, -R aynı iç içe dizinleri siler
+     --no-preserve-root, rootu korumadan siler
+> TOUCH KOMUTU 
+> touch -a --time=time, erişim zamanını değiştirir
+        -m modifikasyon zamanını değiştirir
+        -t oluşturulma zamanı 
+        * touch -t 201404031819.35 aylin
+        * touch -at 201404031819.35 dosya
+        touch -mt 201404031819.35 dosya
+> touch ../dosya_ismi
+> touch dosya
+yeniden touch ile yazsan dosya içeriği değişmez
+> stat file_name
+dosya erişim zamanı öğrenme
+> TAR KOMUTU
+> tar -czvf arsiv.tar.gz arsiv/
+gzip
+> tar -cjvf arsiv.tar.bz2 arsiv/
+bzip2 gz'ye göre daha uzun sürer, ama daha iyi sıkıstırır
+> tar -Af bos2.tar arsiv.tar
+bos2.tar'a arsiv.tar'dakileri ekler
+> tar --append -f bos2.tar dpsya
+sıkıştırılmamış bir dosyayı eklerken arşive
+> CPIO KOMUTU
+cpio tardan daha gelişmiş, dosya sahipliğini koruyor, izinleri ve timestampi korur.
+> cpio -o
+       -v 
+       -i, çıkarmak için
+      * ls dosya | cpio -ov > arşiv.cpio
+      * find cikar/ | cpio -ov > cikar.cpio
+      * cpio -i < ckar.cpio    
+http://pic.dhe.ibm.com/infocenter/aix/v7r1/index.jsp?topic=%2Fcom.ibm.aix.cmds%2Fdoc%2Faixcmds1%2Fcpio.htm
+> DD KOMUTU 
+scsi birden fazla cihazı birbirine bağlayabilmek için olan bir standart
+http://linuxaria.com/howto/the-dd-command-on-linux-terminal?lang=en
+> SEMBOLİK LİNK
+ln -s tam yolu yaz
+> mkdir
+     -p, parent
+     -m, set mode izinlerle ilgili
+> rmdir KOMUTU
+   bos dizini sildi, dosyayı silmez
+   --ignore-fail-on-non-empty, hata mesajı döndürmez
+> chown KOMUTU
+sudo chown fatma:sudo dosya
+> chgrp komutu
+sudo chown -R fatma:sudo dizin/
+hepsinde -R var
+> SUID bit
+herhangi bir programı o programın sahibinin haklarıyla çalıştırmaya yarar
+tüm kullanıcılar için
+ls -l /usr/bin/passwd
+	     /crontab
+> chmod u+s dn.c
+> eğer çalışma izni yoksa S, varsa s dir.
+> UMASK
+> dosya izni 666, dizin izni 777
+> bir kullanıcıyı bir gruba eklemek için
+> adduser ayse sudo
+> newgrp grup_adı 
+switch other group
+> chattr KOMUTU
+  sudo chattr  +a attr.txt
+  sudo chattr -i attr.txt
+  +j, yazma işleminde çekirdeğe haber verir, 
+      geri dönüşüm için iyidir, ext2 desteklemez
+  A erişim zamanı güncellemesi için
+> Quota
+------------------------------------------------------------------------------
+Sistemde hangi kullanıcı ne kadar kota kullanacak diye bunlar belirlidir.
+Kota sisteminin bulunması için bunu çekirdek ve dosya sistemi desteklemelidir.
+ext2, ext3, ReiserFS, XFS bunlar desktekler kotayı ancak 2.6 çekirdek serisinde
+ bu durum desteklenmez.
+İki tane genel kota destekleme sistemi vardır, biri 2.4 serisi quota v1 support
+diğeri 2.6 serisi v2 support
+/etc/fstab içine quota desteklerini girebiliriz
+kullanıcı için usrquota, grpquota
+bu dosya disk bölümlerinin nasıl bağlandığı hakkında bilgi verir
+bölüm eşleme probleminde buradan ayarlanarak düzeltilebilir
+-------------------------------------------------------------------------
+
+> Linux Dosya Sistemi Standartı
+
+-> / root diğer tüm dizinler bunun dallarıdır, 
+windowstaki gibi sözde sürücüler yoktur
+her disk bölümün bağlanabilir çıkarılabilir yapıdadır
+
+/etc ve sbin root ile aynı dizinde olmalıdır?
+
+-> /boot
+başlatırken çalıştırılacak dosyalar var 
+grub burada
+
+-> /bin 
+sistem komutları var
+çalıştırılabilir dosyalar var
+
+-> /sbin
+rootun çalıştırabileceği dosyalar  bulunur
+
+->  /lib 
+kütüphane dosyaları ve çekirdek modülleri bulunur
+
+-> /usr
+eskiden /usr/ebru şeklindeymiş ama şuan home dizini var
+ama hala kullanılıyor usr dizini
+paylaşılabilir ve 
+-> /usr/local
+
+-> /usr/X116 gui
+
+-> /opt
+dağıtımdan bağımsız bir program kurduğunuzda opt altına atılır
+
+-> /home
+
+-> root
+
+-> /var
+mail, log 
+
+-> /tmp
+geçici dosyalar tutulur
+
+-> /mnt
+kaldırılabilir aygıtlar var
+
+-> /media
+
+-> dev
+aygıt dosyaları
+
+> find KOMUTU
+   -perm, izin
+   -name, 
+   -size, 
+   -gid 
+   -uid
+   -user
+
+> whereis KOMUTU
+sınırlı yerlerde arar, lib dizinleri
+man dizinleri, bin dizini gibi kullanıcının kendi 
+oluşturduğu yerlerde aramaz
+> which KOMUTU
+kendi pathimizde arar
+env | grep PATH
+> type KOMUTU
+  type type
+  type pwd
+  type ls
+  type l
+
+dosya tipleri
+sembolik linkse @
+dizinse /
+> ls -l
+long list
+> problem 
+chown komutunda 
+sahibi değişiyor grubu değişmiyor
+> cp --preserve ya da -p
+sahibini korumak için
+> cp -R, -r, --recursive
+> cp -u
+kaynaktaki dosya hedeftekinden daha yeniyse
+
+> mv 
+eğer aynı disk bölümünde mv yapılırsa hızlı çalışır
+> mv -i
+üzerine yazayım mı diye sorar
+> rm -r, -R, --recursive
+> rm -f, --force
+eğer dosya yoksa yok uyarısı vermez
+> rm -i
+sorar sileyim mi diye
+> touch -a erisim_zamani
+> touch -t 201404031819 dosya 
+
+> aliaslar nerede tutulur?
+> vi root root
+>disk sata, scsi ne bunlar 
+
